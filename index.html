@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Thynk Unlimited | No Noise Just News</title>
+  <meta name="description" content="Researched, plain-spoken news and opinion from Jay Altaf." />
+  <meta name="author" content="Jay Altaf" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://thynkunlimitednews.github.io/thynkunlimitednews/" />
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp / Discord / iMessage -->
+  <meta property="og:site_name" content="Thynk Unlimited" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Thynk Unlimited | No Noise Just News" />
+  <meta property="og:description" content="Researched, plain-spoken news and opinion from Jay Altaf." />
+  <meta property="og:url" content="https://thynkunlimitednews.github.io/thynkunlimitednews/" />
+  <meta property="og:image" content="https://thynkunlimitednews.github.io/thynkunlimitednews/social/home.jpg" />
+  <meta property="og:image:secure_url" content="https://thynkunlimitednews.github.io/thynkunlimitednews/social/home.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Thynk Unlimited — No Noise Just News" />
+
+  <!-- X (Twitter) Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Thynk Unlimited | No Noise Just News" />
+  <meta name="twitter:description" content="Researched, plain-spoken news and opinion from Jay Altaf." />
+  <meta name="twitter:image" content="https://thynkunlimitednews.github.io/thynkunlimitednews/social/home.jpg" />
+  <meta name="twitter:image:alt" content="Thynk Unlimited — No Noise Just News" />
+
+  <!-- Theme & Icons -->
+  <meta name="theme-color" content="#fbfbfa" />
+  <link rel="icon" type="image/png" href="./social/favicon.png" />
+  <link rel="apple-touch-icon" href="./social/home.jpg" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsMediaOrganization",
+    "name": "Thynk Unlimited",
+    "slogan": "No Noise Just News",
+    "url": "https://thynkunlimitednews.github.io/thynkunlimitednews/",
+    "logo": "https://thynkunlimitednews.github.io/thynkunlimitednews/social/home.jpg",
+    "founder": {
+      "@type": "Person",
+      "name": "Jay Altaf"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #fbfbfa;
+      --paper: #ffffff;
+      --ink: #141413;
+      --muted: #666660;
+      --line: #e4e4df;
+      --accent: #b81d13;
+      --max: 780px;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      margin: 0;
+      padding: 0 20px 64px;
+      line-height: 1.65;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    header.mast {
+      border-bottom: 2px solid var(--ink);
+      padding: 28px 0 18px;
+      margin-bottom: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 4vw, 2.4rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .tagline {
+      margin: 4px 0 0;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    nav.cats {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    nav.cats button {
+      background: none;
+      border: none;
+      padding: 4px 0;
+      cursor: pointer;
+      color: var(--muted);
+      font: inherit;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav.cats button.active,
+    nav.cats button:hover {
+      color: var(--ink);
+      border-bottom-color: var(--accent);
+    }
+
+    .feed {
+      display: grid;
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      transition: border-color 0.15s ease;
+    }
+
+    @media (min-width: 640px) {
+      .card.has-img {
+        grid-template-columns: 220px 1fr;
+        align-items: start;
+      }
+    }
+
+    .card:hover {
+      border-color: #b8b8b0;
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+      background: #efefe9;
+    }
+
+    .kicker {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-size: 1.32rem;
+      line-height: 1.28;
+    }
+
+    .card h2 a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .card h2 a:hover {
+      text-decoration: underline;
+    }
+
+    .deck {
+      margin: 0 0 12px;
+      color: #353532;
+      font-size: 0.96rem;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .art {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: clamp(20px, 4vw, 38px);
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .back-btn:hover { color: var(--ink); }
+
+    .art h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 4vw, 2.35rem);
+      line-height: 1.18;
+      margin: 6px 0 12px;
+      letter-spacing: -0.015em;
+    }
+
+    .art .lead {
+      font-size: 1.12rem;
+      color: #353532;
+      margin: 0 0 18px;
+    }
+
+    .art figure {
+      margin: 22px 0;
+    }
+
+    .art figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--line);
+    }
+
+    .art figcaption {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .art-body {
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      line-height: 1.78;
+      color: #1c1c1a;
+    }
+
+    .art-body p {
+      margin: 0 0 1.2em;
+    }
+
+    .tools {
+      margin: 26px 0;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tools-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-right: 4px;
+    }
+
+    .share-btn {
+      appearance: none;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      padding: 7px 13px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 3px;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .share-btn:hover {
+      background: #f0f0ec;
+      border-color: #b8b8b0;
+    }
+
+    .share-btn.primary {
+      background: var(--ink);
+      color: #ffffff;
+      border-color: var(--ink);
+    }
+
+    .share-btn.primary:hover {
+      background: #2c2c2a;
+    }
+
+    .toast {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .toast.show { opacity: 1; }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="mast">
+      <a class="brand" href="./" id="homeLink">
+        <h1>Thynk Unlimited</h1>
+        <p class="tagline">No Noise Just News</p>
+      </a>
+      <nav class="cats" id="catNav" aria-label="Sections">
+        <button type="button" data-cat="all" class="active">All</button>
+        <button type="button" data-cat="World">World</button>
+        <button type="button" data-cat="Politics">Politics</button>
+        <button type="button" data-cat="Opinion">Opinion</button>
+      </nav>
+    </header>
+
+    <main id="app" aria-live="polite"></main>
+
+    <footer>
+      <span>&copy; <span id="yr"></span> Thynk Unlimited &middot; Edited by Jay Altaf</span>
+      <span>Researched, plain-spoken reporting.</span>
+    </footer>
+  </div>
+
+  <script>
+    const SITE_URL = "https://thynkunlimitednews.github.io/thynkunlimitednews/";
+    const DEFAULT_IMAGE = SITE_URL + "social/home.jpg";
+
+    const FALLBACK_ARTICLES = [
+      {
+            "slug": "welcome-to-thynk-unlimited",
+            "section": "Opinion",
+            "title": "Why Plain-Spoken Reporting Matters More Than Ever",
+            "deck": "Cutting through algorithmic outrage with verified facts, clear context, and editorial restraint.",
+            "author": "Jay Altaf",
+            "date": "2026-11-23",
+            "image": "social/home.jpg",
+            "caption": "Thynk Unlimited — Independent editorial desk.",
+            "body": [
+                  "Modern news feeds reward speed and outrage over accuracy. When every headline is engineered to provoke a click, readers end up exhausted and less informed.",
+                  "Thynk Unlimited is built on a straightforward premise: verify the primary sources, strip away the filler, and present what actually happened in clear, direct language."
+            ]
+      }
+];
+
+    let ARTICLES = FALLBACK_ARTICLES;
+    const app = document.getElementById("app");
+    const catNav = document.getElementById("catNav");
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    function resolveAbsoluteUrl(path) {
+      if (!path) return DEFAULT_IMAGE;
+      if (/^https?:\/\//i.test(path)) return path;
+      return SITE_URL + path.replace(/^\.?\//, "");
+    }
+
+    // Crawler-friendly static path for individual stories
+    function getCrawlerShareUrl(slug) {
+      return `${SITE_URL}story/${encodeURIComponent(slug)}/`;
+    }
+
+    function setMetaTag(attrName, attrValue, content) {
+      let el = document.querySelector(`meta[${attrName}="${attrValue}"]`);
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(attrName, attrValue);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", content);
+    }
+
+    function updatePageMeta({ title, description, url, image, type = "website" }) {
+      document.title = title;
+      setMetaTag("name", "description", description);
+      setMetaTag("property", "og:type", type);
+      setMetaTag("property", "og:title", title);
+      setMetaTag("property", "og:description", description);
+      setMetaTag("property", "og:url", url);
+      setMetaTag("property", "og:image", image);
+      setMetaTag("property", "og:image:secure_url", image);
+      setMetaTag("name", "twitter:title", title);
+      setMetaTag("name", "twitter:description", description);
+      setMetaTag("name", "twitter:image", image);
+
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute("href", url);
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function buildShareBar(title, shareUrl) {
+      const encodedUrl = encodeURIComponent(shareUrl);
+      const encodedText = encodeURIComponent(title + " — Thynk Unlimited");
+
+      return `
+        <div class="tools" role="region" aria-label="Share this story">
+          <span class="tools-label">Share</span>
+          <button type="button" class="share-btn primary" data-native-share data-title="${escapeHtml(title)}" data-url="${escapeHtml(shareUrl)}">Share Story</button>
+          <a class="share-btn" href="https://x.com/intent/tweet?text=${encodedText}&url=${encodedUrl}" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+          <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="share-btn" href="https://api.whatsapp.com/send?text=${encodedText}%20${encodedUrl}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <button type="button" class="share-btn" data-copy-url="${escapeHtml(shareUrl)}">Copy Link</button>
+          <span class="toast" aria-live="polite">Link copied</span>
+        </div>
+      `;
+    }
+
+    function bindShareHandlers(container) {
+      const nativeBtn = container.querySelector("[data-native-share]");
+      const copyBtn = container.querySelector("[data-copy-url]");
+      const toast = container.querySelector(".toast");
+
+      const showToast = (msg) => {
+        if (!toast) return;
+        toast.textContent = msg;
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 2200);
+      };
+
+      if (nativeBtn) {
+        nativeBtn.addEventListener("click", async () => {
+          const title = nativeBtn.getAttribute("data-title");
+          const url = nativeBtn.getAttribute("data-url");
+          if (navigator.share) {
+            try {
+              await navigator.share({ title, url });
+              return;
+            } catch (_) {}
+          }
+          await navigator.clipboard.writeText(url);
+          showToast("Link copied to clipboard");
+        });
+      }
+
+      if (copyBtn) {
+        copyBtn.addEventListener("click", async () => {
+          const url = copyBtn.getAttribute("data-copy-url");
+          await navigator.clipboard.writeText(url);
+          showToast("Link copied to clipboard");
+        });
+      }
+    }
+
+    function renderFeed(section = "all") {
+      updatePageMeta({
+        title: "Thynk Unlimited | No Noise Just News",
+        description: "Researched, plain-spoken news and opinion from Jay Altaf.",
+        url: SITE_URL,
+        image: DEFAULT_IMAGE,
+        type: "website"
+      });
+
+      const list = section === "all"
+        ? ARTICLES
+        : ARTICLES.filter((a) => a.section.toLowerCase() === section.toLowerCase());
+
+      if (!list.length) {
+        app.innerHTML = `<p>No stories published in this section yet.</p>`;
+        return;
+      }
+
+      app.innerHTML = `
+        <section class="feed">
+          ${list.map((art) => {
+            const href = `?story=${encodeURIComponent(art.slug)}`;
+            const hasImg = Boolean(art.image);
+            return `
+              <article class="card ${hasImg ? "has-img" : ""}">
+                ${hasImg ? `<a href="${href}" data-slug="${escapeHtml(art.slug)}"><img src="${escapeHtml(art.image)}" alt="${escapeHtml(art.title)}" loading="lazy" /></a>` : ""}
+                <div>
+                  <div class="kicker">${escapeHtml(art.section)}</div>
+                  <h2><a href="${href}" data-slug="${escapeHtml(art.slug)}">${escapeHtml(art.title)}</a></h2>
+                  <p class="deck">${escapeHtml(art.deck)}</p>
+                  <div class="meta">
+                    <span>By ${escapeHtml(art.author)}</span>
+                    <span>&middot;</span>
+                    <time datetime="${escapeHtml(art.date)}">${escapeHtml(art.date)}</time>
+                  </div>
+                </div>
+              </article>
+            `;
+          }).join("")}
+        </section>
+      `;
+
+      app.querySelectorAll("a[data-slug]").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const slug = link.getAttribute("data-slug");
+          history.pushState({ slug }, "", `?story=${encodeURIComponent(slug)}`);
+          renderArticle(slug);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    }
+
+    function renderArticle(slug) {
+      const art = ARTICLES.find((a) => a.slug === slug);
+      if (!art) {
+        renderFeed("all");
+        return;
+      }
+
+      const shareUrl = getCrawlerShareUrl(art.slug);
+      const absImg = resolveAbsoluteUrl(art.image);
+
+      updatePageMeta({
+        title: `${art.title} | Thynk Unlimited`,
+        description: art.deck,
+        url: shareUrl,
+        image: absImg,
+        type: "article"
+      });
+
+      app.innerHTML = `
+        <article class="art">
+          <a class="back-btn" href="./" id="backFeed">&larr; All Stories</a>
+          <div class="kicker">${escapeHtml(art.section)}</div>
+          <h1>${escapeHtml(art.title)}</h1>
+          <p class="lead">${escapeHtml(art.deck)}</p>
+          <div class="meta">
+            <span>By ${escapeHtml(art.author)}</span>
+            <span>&middot;</span>
+            <time datetime="${escapeHtml(art.date)}">${escapeHtml(art.date)}</time>
+          </div>
+
+          ${buildShareBar(art.title, shareUrl)}
+
+          ${art.image ? `
+            <figure>
+              <img src="${escapeHtml(art.image)}" alt="${escapeHtml(art.title)}" />
+              ${art.caption ? `<figcaption>${escapeHtml(art.caption)}</figcaption>` : ""}
+            </figure>
+          ` : ""}
+
+          <div class="art-body">
+            ${art.body.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
+          </div>
+
+          ${buildShareBar(art.title, shareUrl)}
+        </article>
+      `;
+
+      bindShareHandlers(app);
+
+      const backBtn = document.getElementById("backFeed");
+      if (backBtn) {
+        backBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          history.pushState({}, "", "./");
+          renderFeed("all");
+        });
+      }
+    }
+
+    function route() {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get("story");
+      if (slug) {
+        renderArticle(slug);
+      } else {
+        renderFeed("all");
+      }
+    }
+
+    async function init() {
+      try {
+        const res = await fetch("./data/articles.json", { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data) && data.length) {
+            ARTICLES = data;
+          }
+        }
+      } catch (_) {}
+      route();
+    }
+
+    catNav.addEventListener("click", (e) => {
+      const btn = e.target.closest("button[data-cat]");
+      if (!btn) return;
+      catNav.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      history.pushState({}, "", "./");
+      renderFeed(btn.getAttribute("data-cat"));
+    });
+
+    document.getElementById("homeLink").addEventListener("click", (e) => {
+      e.preventDefault();
+      catNav.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
+      catNav.querySelector('button[data-cat="all"]').classList.add("active");
+      history.pushState({}, "", "./");
+      renderFeed("all");
+    });
+
+    window.addEventListener("popstate", route);
+    init();
+  </script>
+</body>
+</html>
